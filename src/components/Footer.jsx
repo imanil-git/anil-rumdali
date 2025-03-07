@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Footer = () => {
+  const [scrollYPosition, setScrollYPosition] = useState(0);
+
+  const handleOnScrollY = () => {
+    setScrollYPosition(window.scrollY);
+  };
+
+  useEffect(() => {
+    //end of the render, run following code
+    window.addEventListener("scroll", handleOnScrollY);
+
+    //clean up the events
+    return () => {
+      window.addEventListener("scroll", handleOnScrollY);
+    };
+  }, []);
+  // console.log( "Y-Position = ", scrollYPosition);
   return (
     <>
       <footer className="flex-center">
@@ -47,11 +63,13 @@ const Footer = () => {
           &copy; Copy right all reserved 2024 || Made by me with 🚀
         </div>
       </footer>
-      <a href="#hero" title="goUp">
-        <div className="goUp flex-center">
-          <i className="fa-solid fa-chevron-up"></i>
-        </div>
-      </a>
+      {scrollYPosition > 4480 && (
+        <a href="#hero" title="goUp">
+          <div className="goUp flex-center">
+            <i className="fa-solid fa-chevron-up"></i>
+          </div>
+        </a>
+      )}
     </>
   );
 };
