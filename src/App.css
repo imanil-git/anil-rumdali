@@ -149,7 +149,7 @@ header .header {
 /* hero section  */
 
 .hero-section {
-  margin-top: 2rem 0;
+  margin-top: 5rem;
   min-height: 60vh;
   padding: 7rem;
 }
@@ -403,7 +403,7 @@ footer .top ul li {
 
 /* Media query */
 
-@media (max-width: 750px) {
+@media (max-width: 768px) {
   /* Navabar */
   [for="hamburgerMenu"] {
     cursor: pointer;
@@ -431,8 +431,12 @@ footer .top ul li {
     line-height: 2.5rem;
   }
 
-  #hamburgerMenu:checked + .menu {
+  /* #hamburgerMenu:checked + .menu {
     left: calc(100vh - 250px);
+  } */
+
+  .slide{
+    left: calc(100vw - 250px);
   }
 
   /* hero */
