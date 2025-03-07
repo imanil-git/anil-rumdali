@@ -13,7 +13,7 @@ const Footer = () => {
 
     //clean up the events
     return () => {
-      window.addEventListener("scroll", handleOnScrollY);
+      window.removeEventListener("scroll", handleOnScrollY);
     };
   }, []);
   // console.log( "Y-Position = ", scrollYPosition);
@@ -63,7 +63,7 @@ const Footer = () => {
           &copy; Copy right all reserved 2024 || Made by me with 🚀
         </div>
       </footer>
-      {scrollYPosition > 4480 && (
+      {scrollYPosition > 2000 && (
         <a href="#hero" title="goUp">
           <div className="goUp flex-center">
             <i className="fa-solid fa-chevron-up"></i>
